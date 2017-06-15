@@ -5,4 +5,4 @@ import Select from "./Select/select";
 ReactDOM.render(
     <Select />,
     document.querySelector('#app')
-); 
+);

@@ -24,15 +24,7 @@
 
 ### 方式 ②：使用官方脚手架 `create-react-app` 创建单页面应用
 
-我们可以使用FaceBook官方推出的[`Create-React-App`](https://github.com/facebookincubator/create-react-app)脚手架，零配置快速搭建基于webpack的React开发环境，它还内置了热更新等功能。
-
-+ 无需配置；
-+ 集成了对 React, JSX, ES6 和 Flow 的支持；
-+ 集成了开发服务器；
-+ 内置了热更新，修改代码保存后浏览器会自动刷新；
-+ 在 JavaScript 中可以直接 import CSS 和图片
-+ 自动处理 CSS 的兼容问题，无需添加 -webkit 前缀；
-+ 集成好了编译命令，编译后直接发布成产品，并且还包含了 sourcemaps。
+我们可以使用FaceBook官方推出的[`Create-React-App`](https://github.com/facebookincubator/create-react-app)脚手架，零配置快速搭建基于webpack的React开发环境，它还内置了热更新等功能。了解更多：[详细](https://github.com/facebookincubator/create-react-app/blob/master/README.md#why-use-this)
 
 
 > You’ll need to have Node >= 6 on your machine.
@@ -123,3 +115,32 @@ module.exports = {
     "plugins": []
 }
 ```
+
+建立目录`public`并建立文件`index.html`
+
+``` html
+<div id="app"></div>
+```
+
+建立目录`src`，并建立文件`index.js`
+ 
+``` javascript
+import React from "react";
+import ReactDOM from "react-dom";
+
+ReactDOM.render(
+    <h1>Hello World!</h1>,
+    document.querySelector('#app')
+);
+```
+
+至此，项目初步构建完毕。
+
+---
+
+### 注解：
+
++ __react-scripts__ is a development dependency in the generated projects (including this one)
+[react-script](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md)
+
+安装此依赖后，无需再自己手动配置webpack。默认监听的端口为3000，如需修改可以在`/node_modules/react-scripts/scripts/start.js`中找到`DEFAULT_PORT`并修改其值。
