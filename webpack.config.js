@@ -2,7 +2,7 @@ const webpack = require('webpack')
 const path = require('path')
 module.exports = {
     context: path.join(__dirname),
-    entry: "./src/js/index.js",     // 入口文件
+    entry: "./src/index.js",     // 入口文件
     module: {
         loaders: [{
             test: /\.js|jsx?$/,
